@@ -22,13 +22,13 @@ module Jabber
     # Create a new message
     # >to:: a JID or a String object to send the message to.
     # >body:: the message's body
-    def initialize(to = nil, body = nil)
+    def initialize(to = nil, payload = nil)
       super()
       if not to.nil?
         set_to(to)
       end
       if !body.nil?
-        add_element(REXML::Element.new("body").add_text(body))
+        add_element(REXML::Element.new("payload").add_text(body))
       end
     end
 
